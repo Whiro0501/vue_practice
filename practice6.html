@@ -9,18 +9,27 @@
     <script src="vue.js"></script>
 
     <div id="app">
-      <p >{{ number}}回クリック</p>
+      <p>{{ number}}回クリック</p>
       <button v-on:click="countUp">カウントアップ</button>
+      <p v-on:mousemove="changeMouse">マウスを載せてください</p>
+      <p>X:{{x}}, Y:{{y}}</p>
     </div>
     <script>
       var app = new Vue({
         el: '#app',
         data: {
-          number: 0
+          number: 0,
+          x:0,
+          y:0
         },
         methods: {
           countUp: function(){
             this.number += 1
+          },
+          changeMouse: function(event){
+            console.log(event);
+            this.x = event.clientX;
+            this.y = event.clientY;
           }
         },
       });
