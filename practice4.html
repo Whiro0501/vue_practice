@@ -9,9 +9,11 @@
     <script src="vue.js"></script>
 
     <div id="app">
-<div>{{ html}}</div>
-<div>{{ html}}</div>
-<div v-html="html"></div>
+      <div>{{ html}}</div>
+      <div>{{ html}}</div>
+      <div>{{ html}}</div>
+
+      <div v-html="html"></div>
     </div>
     <script>
       var app = new Vue({
@@ -20,9 +22,8 @@
           messages: 'Hello Vue!',
           number: 2,
           ok: false,
-          html:"<h1>h1!!</h1>"
+          html: '<h1>h1!!</h1>',
         },
-     
       });
     </script>
   </body>
