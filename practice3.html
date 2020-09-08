@@ -9,14 +9,21 @@
     <script src="vue.js"></script>
 
     <div id="app">
-      <p>{{ messages }}</p>
+      <p  v-once>{{ messages }}</p>
+      <p >{{ sayHi()}}</p>
       <p v-text="messages"></p>
     </div>
     <script>
       var app = new Vue({
         el: '#app',
         data: {
-          messages: 'Hello Vue!',
+          messages: 'Hello Vue!'
+        },
+        methods: {
+          sayHi: function(){
+                      this.messages = "Hello "
+                      return "Hi"
+          }
         },
       });
     </script>
