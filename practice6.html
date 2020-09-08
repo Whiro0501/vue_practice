@@ -11,7 +11,10 @@
     <div id="app">
       <p>{{ number}}回クリック</p>
       <button v-on:click="countUp(2)">カウントアップ</button>
-      <p v-on:mousemove="changeMouse(3, $event)">マウスを載せてください</p>
+      <p v-on:mousemove="changeMouse(3, $event)">マウスを載せてください
+        <span v-on:mousemove.stop>反応しないでsください</span>
+        <a @click.prevent href="https://google.com">Google</a>
+      </p>
       <p>X:{{x}}, Y:{{y}}</p>
     </div>
     <script>
@@ -31,6 +34,9 @@
             this.x = event.clientX /divnum;
             this.y = event.clientY / divnum;
           }
+          // noEvent: function(){
+          //   event.stopPropagation()
+          // }
         },
       });
     </script>
