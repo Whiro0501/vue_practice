@@ -10,8 +10,11 @@
 
     <div id="app">
       <p>{{ count }}</p>
+      <p>{{ test }}test</p>
       <button @click="count += 1">カウント</button>
-      <p>{{ lessthan }} </p>
+      <p>{{ lessthancompu }}</p>
+      <p>{{ lessthan() }}</p>
+      <button @click="test += 1">カウント</button>
     </div>
 
     <script>
@@ -19,11 +22,19 @@
         el: '#app',
         data: {
           count: 0,
+          test: 0,
         },
         computed: {
-          lessthan: function(){
-            return this.count > 3 ? "上": "下"
-          }
+          lessthancompu: function () {
+            console.log('com');
+            return this.count > 3 ? '上' : '下';
+          },
+        },
+        methods: {
+          lessthan: function () {
+            console.log('me');
+            return this.count > 3 ? '上' : '下';
+          },
         },
       });
     </script>
