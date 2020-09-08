@@ -10,14 +10,17 @@
 
     <div id="app">
       <p>{{ messages }}</p>
-      <a :href="url">Google</a>
+      <a :[attr]="url">Google</a>
+      <a v-bind="twiiterObject">Twitter</a>
     </div>
     <script>
       var app = new Vue({
         el: '#app',
         data: {
           messages: 'Hello Vue!',
-          url: "https://google.com"
+          url: 'https://google.com',
+          attr: 'href',
+         twiiterObject:{href: "https://twitter.com", id: 32}
         },
       });
     </script>
