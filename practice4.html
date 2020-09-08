@@ -9,10 +9,8 @@
     <script src="vue.js"></script>
 
     <div id="app">
-      <p>{{ messages }}</p>
-      <p>{{ number  }}</p>
-      <p>{{ ok? "Yes": "no" }}</p>
-      <p>{{ sayHi() }}</p>
+<div>{{ html}}</div>
+<div v-html="html"></div>
     </div>
     <script>
       var app = new Vue({
@@ -20,13 +18,10 @@
         data: {
           messages: 'Hello Vue!',
           number: 2,
-          ok: false
+          ok: false,
+          html:"<h1>h1!!</h1>"
         },
-        methods: {
-          sayHi: function(){
-            return this.messages;
-          }
-        },
+     
       });
     </script>
   </body>
