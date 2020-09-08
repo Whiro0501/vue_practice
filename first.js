@@ -1,0 +1,3 @@
+methods: {
+  "dsd".split("").reverse();
+},
