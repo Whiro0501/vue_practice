@@ -14,6 +14,7 @@
       <p v-on:mousemove="changeMouse(3, $event)">マウスを載せてください
         <span v-on:mousemove.stop>反応しないでsください</span>
         <a @click.prevent href="https://google.com">Google</a>
+        <input type="text"v-on:keyup.space.enter="myAlert">
       </p>
       <p>X:{{x}}, Y:{{y}}</p>
     </div>
@@ -33,6 +34,9 @@
             console.log(event);
             this.x = event.clientX /divnum;
             this.y = event.clientY / divnum;
+          },
+          myAlert: function(){
+            alert('aaa');
           }
           // noEvent: function(){
           //   event.stopPropagation()
