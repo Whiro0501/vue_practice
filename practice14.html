@@ -10,6 +10,8 @@
 
     <div id="app">
       <p>{{ messages }}</p>
+      <p>{{ name }}</p>
+      <button @click="name = 'test'">butt</button>
     </div>
 
     <div id="app2">
@@ -26,6 +28,9 @@
       });
 
       app.messages = 'tet';
+      app.name = "22"
+    
+
 
       var app2 = new Vue({
         el: '#app2',
@@ -38,6 +43,8 @@
           },
         },
       });
+
+      console.log(app.$data);
     </script>
   </body>
 </html>
