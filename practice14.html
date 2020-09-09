@@ -14,6 +14,7 @@
 
     <div id="app2">
       <p>{{ messages }}</p>
+      <button @click="change">button</button>
     </div>
 
     <script>
@@ -23,13 +24,20 @@
           messages: 'Hello Vue!',
         },
       });
+
+      app.messages = 'tet';
+
       var app2 = new Vue({
         el: '#app2',
         data: {
           messages: 'Hello Vue22!',
         },
+        methods: {
+          change: function () {
+            app.messages = 'rere';
+          },
+        },
       });
-
     </script>
   </body>
 </html>
