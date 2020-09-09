@@ -8,7 +8,7 @@
       .red {
         color: red;
       }
-      .blue-b {
+      .blue {
         background-color: blue;
       }
     </style>
@@ -18,7 +18,7 @@
 
     <div id="app">
       <p>{{ messages }}</p>
-      <h1 :class="classObject">1</h1>
+      <h1 :class="[color, bg]">1</h1>
       <button @click="isActive = !isActive">切り替え</button>
     </div>
     <script>
@@ -27,15 +27,18 @@
         data: {
           messages: 'Hello Vue!',
           isActive: true,
-        },
-        computed: {
-          classObject: function(){
-            return {
-              red: this.isActive,
-              'blue-b': !this.isActive
-            }
-          }
+          color: "red",
+          bg: "blue"
         }
+      //   },
+      //   computed: {
+      //     classObject: function(){
+      //       return {
+      //         red: this.isActive,
+      //         'blue-b': !this.isActive
+      //       }
+      //     }
+      //   }
       })
     </script>
   </body>
