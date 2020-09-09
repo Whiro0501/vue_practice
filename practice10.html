@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .red {
+        color: red;
+      }
+      .blue-b {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="vue.js"></script>
+
+    <div id="app">
+      <p>{{ messages }}</p>
+      <h1 :class="classObject">1</h1>
+      <button @click="isActive = !isActive">切り替え</button>
+    </div>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          messages: 'Hello Vue!',
+          isActive: true,
+        },
+        computed: {
+          classObject: function(){
+            return {
+              red: this.isActive,
+              'blue-b': !this.isActive
+            }
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
