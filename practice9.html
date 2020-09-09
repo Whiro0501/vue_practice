@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="vue.js"></script>
+
+    <div id="app">
+      <p>{{ counter }}</p>
+      <button v-on:click="counter  += 1">+1</button>
+
+        <p>{{ lessthan }}</p>
+    </div>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          counter : 0
+        },
+        computed: {
+          lessthan: function(){
+            return this.counter > 3 ? "上" : "下";
+          }
+        },
+        watch: {
+          counter: function(){
+            var vm = this;
+            setTimeout(function(){
+              vm.counter = 0
+            }, 3000)
+          }
+        },
+      });
+    </script>
+  </body>
+</html>
