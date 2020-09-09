@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="vue.js"></script>
+
+    <div id="app">
+      <p>{{ messages }}</p>
+    </div>
+
+    <div id="app2">
+      <p>{{ messages }}</p>
+    </div>
+
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          messages: 'Hello Vue!',
+        },
+      });
+      var app2 = new Vue({
+        el: '#app2',
+        data: {
+          messages: 'Hello Vue22!',
+        },
+      });
+
+    </script>
+  </body>
+</html>
