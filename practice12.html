@@ -9,6 +9,12 @@
     <script src="vue.js"></script>
 
     <div id="app">
+      <ul>
+        <div v-for="(test) in tests" :key="test">
+          <p>{{test}}</p>
+          <input type="text" v-bind="test" />
+        </div>
+      </ul>
       <p>{{ messages }}</p>
       <ul>
         <li v-for="(fruit, index) in fruits" :key="fruits">
@@ -16,13 +22,15 @@
         </li>
       </ul>
       <ul>
-        <li v-for="value, key, index in object" :key="value">{{index }}:: {{ key}}::{{ value}}</li>
+        <li v-for="value, key, index in object" :key="value">
+          {{index }}:: {{ key}}::{{ value}}
+        </li>
       </ul>
       <template v-for="(fruit) in fruits" :key="fruit">
         <ul>
-        <li>{{ fruit}}</li>
-        <hr>
-      </ul>
+          <li>{{ fruit}}</li>
+          <hr />
+        </ul>
       </template>
 
       <ul>
@@ -38,7 +46,8 @@
           object: {
             firstName: 'Hiro',
             lastName: 'Wata',
-            age: 21
+            age: 21,
+            tests: ['test', 'test']
           },
         },
       });
