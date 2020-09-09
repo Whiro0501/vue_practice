@@ -12,13 +12,21 @@
       <p v-if="ok">Ok!!</p>
       <p v-else-if="maybe">maybe</p>
       <p v-else>not ok</p>
+      <template>
+        <p>p</p>
+        <p>p</p>
+        <p>p</p>
+      </template>
+      <p v-show="ok">show</p>
+      <button @click="ok = !ok">ボタン</button>
     </div>
+
     <script>
       var app = new Vue({
         el: '#app',
         data: {
           ok: false,
-          maybe: false
+          maybe: false,
         },
       });
     </script>
