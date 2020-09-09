@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="vue.js"></script>
+
+    <div id="app">
+      <p>{{ messages }}</p>
+      <ul>
+        <li v-for="(fruit, index) in fruits" :key="fruits">
+          {{ index }}: {{ fruit}}
+        </li>
+      </ul>
+      <ul>
+        <li v-for="value, key, index in object" :key="value">{{index }}:: {{ key}}::{{ value}}</li>
+      </ul>
+    </div>
+    <script>
+      var app = new Vue({
+        el: '#app',
+        data: {
+          messages: 'Hello Vue!',
+          fruits: ['リンご', 'バナナ', 'ぶどう'],
+          object: {
+            firstName: 'Hiro',
+            lastName: 'Wata',
+            age: 21
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
