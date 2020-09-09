@@ -18,7 +18,7 @@
 
     <div id="app">
       <p>{{ messages }}</p>
-      <h1 :style="styleObject">Hello</h1>
+      <h1 :style="[styleObject, baseStyle]">Hello</h1>
     </div>
     <script>
       var app = new Vue({
@@ -28,6 +28,9 @@
           styleObject: {
            color: "red",
            'background-color': "blue"
+          },
+          baseStyle: {
+            fontsize: "60px"
           }
         }
         //   },
