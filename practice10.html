@@ -18,28 +18,26 @@
 
     <div id="app">
       <p>{{ messages }}</p>
-      <h1 :class="[color, bg]">1</h1>
-      <button @click="isActive = !isActive">切り替え</button>
+      <h1 :style="{ color: textc, 'background-color': bg }">Hello</h1>
     </div>
     <script>
       var app = new Vue({
         el: '#app',
         data: {
           messages: 'Hello Vue!',
-          isActive: true,
-          color: "red",
-          bg: "blue"
+          textc: 'red',
+          bg: 'blue'
         }
-      //   },
-      //   computed: {
-      //     classObject: function(){
-      //       return {
-      //         red: this.isActive,
-      //         'blue-b': !this.isActive
-      //       }
-      //     }
-      //   }
-      })
+        //   },
+        //   computed: {
+        //     classObject: function(){
+        //       return {
+        //         red: this.isActive,
+        //         'blue-b': !this.isActive
+        //       }
+        //     }
+        //   }
+      });
     </script>
   </body>
 </html>
