@@ -1,28 +1,23 @@
 <template>
-<div>
-  <p>いいね{{ number }}</p>
-  <button @click="countUp">button</button>
-</div>
+  <div>
+    <p>いいね{{ number1/ 2 }}</p>
+    <button @click="countUp">button</button>
+  </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      number: 5,
-    };
-  },
-    methods:  {
-      countUp(){
-        this.number += 1;
-      }
+  props: ['number1'],
+  methods: {
+    countUp() {
+      this.number += 1;
     },
+  },
 };
 </script>
 
-<style  scoped>
-
+<style scoped>
 div {
-  border : 1px solid red;
+  border: 1px solid red;
 }
 </style>
