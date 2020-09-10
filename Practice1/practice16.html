@@ -13,19 +13,20 @@
       <hello></hello>
     </div>
     <script>
-      Vue.component('hello', {
-        data: function(){
+      var compone = {
+        data: function () {
           return {
-          messages: 'Hello Vue!'
-        }
-
-      },
-              template: "<p>{{ messages }}</p>"
-      });
+            messages: 'Hello Vue!',
+          }
+        },
+        template: '<p>{{ messages }}</p>',
+      };
 
       var app = new Vue({
         el: '#app',
-
+        components: {
+          hello: compone
+        }
       });
     </script>
   </body>
