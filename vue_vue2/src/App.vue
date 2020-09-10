@@ -1,15 +1,16 @@
 <template>
-  <p>いいね{{ number }}</p>
+  <div>
+    <LikeHeader></LikeHeader>
+    <LikeNumber></LikeNumber>
+  </div>
 </template>
 
 <script>
+import LikeHeader from './LikeHeader';
+
 export default {
-  data() {
-    return {
-      number: 5,
-    };
-  },
+  components: {
+    LikeHeader
+  }
 };
 </script>
-
-<style></style>
