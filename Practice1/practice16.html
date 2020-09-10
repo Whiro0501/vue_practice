@@ -9,20 +9,23 @@
     <script src="vue.js"></script>
 
     <div id="app">
-            <p>{{ messages }}</p>
+      <p>{{ messages }}</p>
       <hello></hello>
-
     </div>
     <script>
       Vue.component('hello', {
-        template: '<p>hekkkko</p>',
+        data: function(){
+          return {
+          messages: 'Hello Vue!'
+        }
+
+      },
+              template: "<p>{{ messages }}</p>"
       });
 
       var app = new Vue({
         el: '#app',
-        data: {
-          messages: 'Hello Vue!',
-        },
+
       });
     </script>
   </body>
