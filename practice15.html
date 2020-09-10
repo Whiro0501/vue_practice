@@ -9,15 +9,53 @@
     <script src="vue.js"></script>
 
     <div id="app">
-      <p>{{ messages }}</p>
+      <p>rwe</p>
+      <p>{{ name }}</p>
+      <button @click="name =  'update'">update</button>
+      <button @click="destroy">destroy</button>
     </div>
+
     <script>
       var app = new Vue({
         el: '#app',
         data: {
-          messages: 'Hello Vue!'
+          messages: 'Hello Vue!',
+          name: 35535
         },
+        beforeCreate() {
+          console.log("beforeCreate");
+        },
+        created() {
+          console.log("Created");
+        },
+        beforeMount() {
+          console.log("beforeMounted");
+        },
+        mounted() {
+          console.log("Mounted");
+        },
+        beforeUpdate() {
+          console.log("beforeUpdate");
+        },
+        updated() {
+          console.log("Updated");
+        },
+        beforeDestroy() {
+          console.log("beforeDestroy");
+        },
+        destroyed() {
+          console.log('Destroyed');
+        },
+      methods: {
+        destroy: function(){
+          this.$destroy()
+        }
+      },
       });
+
+      var dir = document.createElement('div');
+      console.log(dir);
+      console.dir(document);
     </script>
   </body>
 </html>
