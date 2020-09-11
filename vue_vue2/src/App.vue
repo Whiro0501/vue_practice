@@ -4,10 +4,9 @@
       <h3>はじめまして</h3>
     </LikeHeader>
     <LikeNumber :number1="number" v-on:my-click="emitNumber"></LikeNumber>
-<button @click="currentComponent = 'Home'">Home</button>
-<button @click="currentComponent = 'About'">About</button>
-<About v-if="currentComponent ==='About'"></About>
-<Home v-if="currentComponent === 'Home'"></Home>
+    <button @click="currentComponent = 'Home'">Home</button>
+    <button @click="currentComponent = 'About'">About</button>
+    <component :is="currentComponent"></component>
   </div>
 </template>
 
@@ -20,13 +19,13 @@ export default {
   data: function() {
     return {
       number: 14,
-      currentComponent: "Home"
+      currentComponent: 'Home',
     };
   },
   components: {
-      Home,
-      About,
-    LikeHeader
+    Home,
+    About,
+    LikeHeader,
   },
   methods: {
     emitNumber: function(value) {
