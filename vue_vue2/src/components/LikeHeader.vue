@@ -1,7 +1,11 @@
 <template>
   <div>
-    <slot> </slot>
-    <p> {{headerText}}</p>
+    <slot name="title"> </slot>
+  <slot></slot>
+    <hr>
+
+    <p>いいねの数</p>
+    <slot name=number></slot>
   </div>
 </template>
 

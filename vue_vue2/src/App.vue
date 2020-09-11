@@ -1,9 +1,15 @@
 <template>
   <div>
     <LikeHeader headerText="Hello">
-      <p>トータルの良いね数</p>
-      <h2>{{ number }}</h2>
-
+      <p>first</p>
+      <template v-slot:title="">
+        <h2>こんにちは</h2>
+      </template>
+      <template v-slot:number="">
+        <p>トータルの良いね数</p>
+        <h2>{{ number }}</h2>
+      </template>
+      <p>はじめまして</p>
     </LikeHeader>
 
     <LikeNumber :number1="number" v-on:my-click="emitNumber"></LikeNumber>
@@ -36,7 +42,7 @@ div {
   border: 1px solid blue;
 }
 
-  p {
-    color: rebeccapurple;
-  }
+p {
+  color: rebeccapurple;
+}
 </style>
