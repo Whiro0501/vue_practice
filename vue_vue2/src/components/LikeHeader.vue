@@ -1,11 +1,6 @@
 <template>
   <div>
-    <slot name="title"> </slot>
-  <slot name=default></slot>
-    <hr>
-
-    <p>いいねの数</p>
-    <slot name=number></slot>
+    <slot> </slot>
   </div>
 </template>
 
@@ -19,5 +14,4 @@ export default {
 h1 {
   border: 1px solid red;
 }
-
 </style>

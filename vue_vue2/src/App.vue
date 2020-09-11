@@ -1,35 +1,32 @@
 <template>
   <div>
     <LikeHeader headerText="Hello">
-      <template #title="">
-        <h2>こんにちは</h2>
-      </template>
-      <template #defalt="">
-        <p>first</p>
-        <p>はじめまして</p>
-      </template>
-      <template #number="">
-        <p>トータルの良いね数</p>
-        <h2>{{ number }}</h2>
-      </template>
+      <h3>はじめまして</h3>
     </LikeHeader>
-
     <LikeNumber :number1="number" v-on:my-click="emitNumber"></LikeNumber>
-    <LikeNumber :number1="number"></LikeNumber>
+<button @click="currentComponent = 'Home'">Home</button>
+<button @click="currentComponent = 'About'">About</button>
+<About v-if="currentComponent ==='About'"></About>
+<Home v-if="currentComponent === 'Home'"></Home>
   </div>
 </template>
 
 <script>
 import LikeHeader from './components/LikeHeader';
+import Home from './components/Home';
+import About from './components/About';
 
 export default {
   data: function() {
     return {
       number: 14,
+      currentComponent: "Home"
     };
   },
   components: {
-    LikeHeader,
+      Home,
+      About,
+    LikeHeader
   },
   methods: {
     emitNumber: function(value) {
