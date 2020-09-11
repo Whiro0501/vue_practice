@@ -1,6 +1,7 @@
 <template>
   <div>
     <slot> </slot>
+    <p> {{headerText}}</p>
   </div>
 </template>
 
@@ -14,4 +15,5 @@ export default {
 h1 {
   border: 1px solid red;
 }
+
 </style>

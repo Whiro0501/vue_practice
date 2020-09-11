@@ -1,8 +1,9 @@
 <template>
   <div>
-    <LikeHeader>
+    <LikeHeader headerText="Hello">
       <p>トータルの良いね数</p>
       <h2>{{ number }}</h2>
+
     </LikeHeader>
 
     <LikeNumber :number1="number" v-on:my-click="emitNumber"></LikeNumber>
@@ -34,4 +35,8 @@ export default {
 div {
   border: 1px solid blue;
 }
+
+  p {
+    color: rebeccapurple;
+  }
 </style>
