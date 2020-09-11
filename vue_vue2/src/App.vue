@@ -11,20 +11,19 @@
 import LikeHeader from './components/LikeHeader';
 
 export default {
-  data: function(){
+  data: function() {
     return {
-      number: 14
+      number: 14,
     };
   },
   components: {
     LikeHeader,
   },
   methods: {
-    emitNumber: function(value){
-      this.number = value
-    }
+    emitNumber: function(value) {
+      this.number = value;
+    },
   },
-  
 };
 </script>
 
