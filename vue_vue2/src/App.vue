@@ -1,7 +1,10 @@
 <template>
   <div>
-    <LikeHeader></LikeHeader>
-    <h2>{{ number }}</h2>
+    <LikeHeader>
+      <p>トータルの良いね数</p>
+      <h2>{{ number }}</h2>
+    </LikeHeader>
+
     <LikeNumber :number1="number" v-on:my-click="emitNumber"></LikeNumber>
     <LikeNumber :number1="number"></LikeNumber>
   </div>

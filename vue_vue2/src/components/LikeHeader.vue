@@ -1,11 +1,17 @@
 <template>
-<h1>トータルのいいね</h1>
+  <div>
+    <slot> </slot>
+  </div>
 </template>
 
+<script>
+export default {
+  props: ['headerText'],
+};
+</script>
 
-<style  scoped>
-
+<style scoped>
 h1 {
-  border : 1px solid red;
+  border: 1px solid red;
 }
 </style>
