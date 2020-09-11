@@ -1,15 +1,17 @@
 <template>
   <div>
     <LikeHeader headerText="Hello">
-      <p>first</p>
-      <template v-slot:title="">
+      <template #title="">
         <h2>こんにちは</h2>
       </template>
-      <template v-slot:number="">
+      <template #defalt="">
+        <p>first</p>
+        <p>はじめまして</p>
+      </template>
+      <template #number="">
         <p>トータルの良いね数</p>
         <h2>{{ number }}</h2>
       </template>
-      <p>はじめまして</p>
     </LikeHeader>
 
     <LikeNumber :number1="number" v-on:my-click="emitNumber"></LikeNumber>
