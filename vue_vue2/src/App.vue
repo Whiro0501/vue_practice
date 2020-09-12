@@ -16,7 +16,7 @@
         type="text"
         name=""
         id="title"
-        v-model.lazy.trim="eventData.title"
+        v-model="eventData.title"
       />
       <pre>{{ eventData.title }}</pre>
 
@@ -65,7 +65,14 @@
       <label for="paid">無料</label>
       <input type="radio" id="paid" value="有料" v-model="eventData.price" />
       <label for="paid">有料</label>
-      <p>{{ eventData.price}}</p>
+      <p>{{ eventData.price }}</p>
+      <p>開催場所</p>
+      <select v-model="eventData.place" >
+        <option v-for="value in eventData.location" :key="value"
+          >{{ value }}
+        </option>
+      </select>
+      <p>{{ eventData.place}}</p>
     </div>
   </div>
 </template>
@@ -86,7 +93,9 @@ export default {
         host: '',
         detail: '',
         target: [],
-        price: []
+        price: [],
+        location: ['東京', '大阪', '名古屋'],
+        place: ""
       },
     };
   },
