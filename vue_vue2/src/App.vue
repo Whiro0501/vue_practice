@@ -16,7 +16,8 @@
         type="text"
         name=""
         id="title"
-        v-model="eventData.title"
+        v-bind:value="eventData.title"
+        v-on:input="eventData.title = $event.target.value"
       />
       <pre>{{ eventData.title }}</pre>
 
