@@ -8,9 +8,12 @@
 <script>
 export default {
     methods: {
-        toUsers(){
-            this.$router.push({path:"users"});
-        }
+        toUsers() {
+            this.$router.push({ 
+                name: "users-id-profile",
+                params: { id: 1}
+             });
+        },
     },
-}
+};
 </script>
