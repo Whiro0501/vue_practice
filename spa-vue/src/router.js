@@ -38,6 +38,9 @@ export default new Router({
                     name: "users-id-profile"
                 },
             ]
+        },
+        {
+            path: '/hello', redirect: '/'
         }
     ]
 });
