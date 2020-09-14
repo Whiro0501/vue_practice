@@ -6,9 +6,12 @@
         <hr />
         <h1>User No. {{ id }}</h1>
         <router-link :to="'/users/' + (Number(id) + 1) + '/profile'">次のユーザ</router-link>
-        <hr>
-        <router-link :to="{name: 'users-id-profile', params: { id: Number(id) + 1}, query: {lang: 'ja', page: 2}}">次です</router-link>
-
+        <hr />
+<div style="height:700px;"></div>
+        <router-link
+        id="next-user"
+            :to="{name: 'users-id-profile', params: { id: Number(id) + 1}, query: {lang: 'ja', page: 2}}"
+        >次です</router-link>
         <router-view></router-view>
     </div>
 </template>
