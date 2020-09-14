@@ -40,7 +40,7 @@ export default new Router({
             ]
         },
         {
-            path: '/hello', redirect: '/'
+            path: '*', redirect: '/'
         }
     ]
 });
