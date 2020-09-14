@@ -4,6 +4,8 @@ import Home from './views/Home';
 import Users from './views/Users';
 import UsersProfile from './views/UsersProfile';
 import UsersPost from './views/UsersPost';
+import HeaderUsers from './views/HeaderUsers';
+import HeaderHome from './views/HeaderHome';
 
 Vue.use(Router);
 
@@ -11,12 +13,21 @@ export default new Router({
     mode: "history",
     routes: [{
             path: "/",
-            component: Home
+            components: {
+                default: Home,
+                header: HeaderHome
+            }
         },
         {
             path: "/users/:id",
-            component: Users,
-            props: true,
+            components: {
+                default: Users,
+                header: HeaderUsers
+            },
+            props: {
+                default: true,
+                header: false
+            },
             children: [{
                     path: "posts",
                     component: UsersPost
