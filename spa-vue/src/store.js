@@ -19,5 +19,13 @@ state.count += number;
         decrement(state, number){
             state.count -= number;
         }
+    },
+    actions: {
+        increment({commit}, number){
+            commit('increment', number);
+        },
+        decrement({commit}, number){
+            commit('decrement', number);
+        }
     }
 });
