@@ -7,11 +7,12 @@
 </template>
 
 <script>
+
+import { mapGetters} from 'vuex';
+
 export default {
     computed: {
-        doubleCount(){
-            return this.$store.getters.doubleCount;
-        }
+        ...mapGetters(["doubleCount"])
     },
     methods: {
         toUsers() {
