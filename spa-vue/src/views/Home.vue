@@ -7,19 +7,18 @@
 </template>
 
 <script>
-
-import { mapGetters} from 'vuex';
+import { mapGetters } from "vuex";
 
 export default {
     computed: {
-        ...mapGetters(["doubleCount"])
+        ...mapGetters(["doubleCount"]),
     },
     methods: {
         toUsers() {
-            this.$router.push({ 
+            this.$router.push({
                 name: "users-id-profile",
-                params: { id: 1}
-             });
+                params: { id: 1 },
+            });
         },
     },
 };
